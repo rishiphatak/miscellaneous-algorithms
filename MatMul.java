@@ -24,7 +24,7 @@ class Multiplier implements Runnable {
         int j, k;
         for (j = 0; j < n; j++) {
             for (k = 0; k < n; k++) {
-                res[rowNum][j] = matA[rowNum][k] * matB[k][j];
+                res[rowNum][j] += matA[rowNum][k] * matB[k][j];
             }
         }
     }
@@ -44,8 +44,9 @@ public class MatMul {
     }
 
     public static void main(String[] args) {
-        // populate input matrices and result with
+        // populate input matrices with
         // random numbers
+        // and result matrix with zeros
         Random random = new Random();
         final int N = 2000;
 
